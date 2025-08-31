@@ -1,0 +1,467 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+.jumbotron{
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #faeee7;
+    color: #594a4e;
+    padding: 30px;
+    line-height: 15px;
+    font-weight: 500;
+    min-height: 200px;
+}
+
+header{
+}
+
+header nav{
+    display: flex;
+    /* margin: auto ; */
+    justify-content: start;
+    background-color: #ffc6c7;
+    padding: 10px;
+    position:sticky ;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li{
+    list-style-type: none;
+    font-weight: 500;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #33272a;
+    padding: 20px;
+
+}
+
+main{
+    margin: auto;
+}
+
+nav li:hover{
+  font-weight: 700;
+}
+
+.container-calc{
+    margin: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    max-width: 900px;
+    padding: 30px;
+    background-color: #faeee7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fbfbfb;
+    border: 1px solid;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    line-height: 2em;
+}
+
+.input-group input {
+    flex-grow: 1;
+    padding: 0.4rem 4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+form .input-group-desc{
+    margin-left: 10px;
+    padding: 0.375rem 0.75rem;
+
+}
+
+input[type="number"] {
+    position: relative; 
+    padding-right: 40px; 
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    position: absolute;
+    right: 15px;
+    height: 100%;
+    top: 0%;
+}
+
+.jenis-kelamin{
+    display: flex;
+    align-items: self-start;
+    gap: 80px;
+}
+
+.button {
+    display: flex; /* Mengatur agar tombol berada dalam satu baris */
+    flex-direction: row; /* Mengatur arah flex menjadi baris */
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    border: none; 
+    border-radius: 5px; 
+    padding: 12px 17px; 
+    background-color: #ff8ba7; /* Warna latar belakang tombol */
+    color: #33272a; /* Warna teks tombol */
+    font-weight: 500; /* Menambahkan ketebalan font */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color .3s ease-in-out; 
+    font-family: 'Quicksand';
+}
+
+.btn:hover {
+    background-color: #ffc6c7;
+    font-weight: bolder;
+}
+
+/* Gaya untuk bagian hasil */
+#result {
+    display: flex;
+    min-width: 300px; 
+    max-height: 400px;/* Maksimal lebar yang sama dengan form */
+    padding: 30px; /* Padding yang sama */
+    background-color: #faeee7; /* Warna latar belakang yang sama */
+    justify-content: center;
+    flex-direction: column; /* Mengatur arah flex menjadi kolom */
+    align-items: center; /* Mengatur agar item berada di tengah */
+    line-height: 30px; /* Jarak antar baris */
+    border-radius: 10px; /* Sudut melengkung */
+    box-sizing: border-box;
+    margin-top: 40px;
+    margin-right: 60px;/* Menghitung padding dan border dalam lebar total */
+}
+
+
+
+/* Gaya untuk judul hasil */
+.result-title {
+    font-size: 24px; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Gaya untuk nilai BMI */
+.result-bmi {
+    font-size: 20px; /* Ukuran font untuk nilai BMI */
+    font-weight: bold; /* Menebalkan teks */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+/* Gaya untuk deskripsi hasil */
+.result-desc {
+    font-size: 16px; /* Ukuran font untuk deskripsi */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Gaya untuk tombol di bagian hasil */
+#result .btn {
+    margin-top: 20px; /* Jarak atas untuk tombol */
+    border: none; 
+    border-radius: 5px; 
+    padding: 12px 17px; 
+    background-color: #ff8ba7; /* Warna latar belakang tombol */
+    color: #33272a; /* Warna teks tombol */
+    font-weight: 500; /* Menambahkan ketebalan font */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    transition: background-color .3s ease-in-out; 
+    font-family: 'Quicksand';
+}
+
+#result .btn:hover {
+    background-color: #ffc6c7;
+    font-weight: bolder;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column; /* Mengatur arah flex menjadi kolom */
+        align-items: stretch; /* Mengatur agar item mengisi lebar */
+    }
+
+    .container-calc{
+        margin: 0px 0px 50px 0px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    form{
+      min-width: 100%;
+    }
+    
+    .form-input{
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border: 1px solid;
+        align-items: stretch;
+    }
+    
+    .input-group{
+        display: flex;
+        align-items: center;
+        line-height: 1%;
+    }
+    
+    .input-group input {
+        padding: 10 2px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    
+    form .input-group-desc{
+        margin-left: 1px;
+        padding: 0.3rem 0.1rem;
+    
+    }
+    
+    
+    .footer-container ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #result{
+        margin-right: 0;
+        margin-top: -60px;
+    }
+
+    .jumbotron p{
+        line-height: 30px;
+    }
+};
+
+.social-links {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Mengatur agar tautan berada di tengah */
+    gap: 20px; /* Jarak antar tautan */
+}
+
+.social-links a {
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    color: #33272a; /* Warna teks tautan */
+    font-weight: 500; /* Menambahkan ketebalan font */
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+    display: flex; /* Menggunakan flexbox untuk ikon dan teks */
+    align-items: center; /* Mengatur agar ikon dan teks berada di tengah */
+}
+
+.social-links a i {
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+    font-size: 20px; /* Ukuran ikon */
+}
+
+.social-links a:hover {
+    color: #ff8ba7; /* Warna saat hover */
+}
+
+footer{
+    margin: 0;
+    background-color:#faeee7;
+    padding: 10px;
+}
+
+.footer-container ul{
+    display: flex;
+   justify-content: end;
+}
+
+.errorMessage{
+    color: red;
+}
+
+.d-hidden{
+    display: none;
+}
+
+.container-two{
+    padding: 20px;
+    margin: 40px auto;
+    box-sizing: border-box; 
+    background-color: #ffffff;
+}
+
+.service{
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.one{
+    background-color: #faeee7;
+}
+
+.two{
+    background-color: #ffc6c7;
+}
+
+.three{
+    background-color: #faeee7;
+}
+
+.footer {
+    background-color: #374151;
+    color: white;
+    padding: 3rem 1.5rem;
+    font-family: sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-info {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: pink; /* Approx Tailwind primary/80 */
+    text-decoration: none;
+  }
+  
+  .footer-role {
+    color: #9ca3af; /* Tailwind's gray-400 */
+    margin-top: 0.5rem;
+  }
+  
+  
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .footer-nav a {
+    color: #d1d5db; /* Tailwind's gray-300 */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-nav a:hover {
+    color: #60a5fa;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .footer-social a {
+    color: pink;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    color: #faeee7;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid pink; /* Tailwind's gray-800 */
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #9ca3af;
+  }
+  
+  .heart {
+    color: pink;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .footer-nav-social {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+
+@media (min-width: 600px) {
+    .container-two{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+
+    .container-calc{
+       
+    }
+    
+    
+    .service{
+        width: 31%;
+        height: 100%;
+    }
+
+}
