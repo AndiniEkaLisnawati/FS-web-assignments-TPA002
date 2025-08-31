@@ -3,9 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
+    <meta name="author" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>BMI Calc</title>
+    <link rel="icon" href="./image/calculator.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    
+<body>  
+    <div id="home" class="container">
+        <header>
+            <div class="jumbotron">
+                <h1>Body Mass Index</h1>
+                <p>Your healt jurney start here: Lets Calculate your BMI Today!</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#bmiCalc">BMI Calc</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#more">More</a></li>
+                </ul>
+            </header>
+        </nav>
+        <main>
+            <section>
+
+                <div class="container-calc" id="bmiCalc">
+                    <form id="form" action="">
+                        <label class="form-gender" for="gender">gender</label>
+                        <div class="input-group">
+                            <div class="jenis-kelamin">
+                                <div class="male">
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male"><img src="./image/gender_laki_laki-removebg-preview (1).png" width="35px" alt=""></label>
+                            </div>
+                            <div class="female">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female"><img src="./image/gender_perempuan-removebg-preview (1).png" alt="" width="30px"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="genderErrorMessage" class="errorMessage"></span>
+
+                    <div>
+                        <label for="weight" class="form-weight">Weight</label>
+                        <div class="input-group">
+                            <input type="number" class="form-input" name="weight" id="weight">
+                            <span for="weight" class="input-group-desc" >KG</span>
+                        </div>
+                        <span id="weightErrorMessage" class="errorMessage"></span>
+                    </div>
+                    
+                    <div>
+                        <label for="height" class="form-height">Height</label>
+                        <div class="input-group">
+                            <input type="number" name="height" id="height" class="form-input">
+                            <span for="height" class="input-group-desc">CM</span>
+                        </input>
+                    </div>
+                    <span id="heightErrorMessage" class="errorMessage"></span>
+                </div>
+                
+                <div>
+                    <label for="age" class="form-age">Age</label> 
+                    <div class="input-group">
+                        <input type="number" id="age" class="form-input">
+                        <span for="age" class="input-group-desc">y.o</span>
+                    </div>
+                    <span id="ageErorMessage" class="errorMessage"></span>
+                    <div class="button">
+                        <button type="submit" class="btn" onclick="checkBMI()">Count BMI</button>
+                        <button type="reset" class="btn btn-reset">Reset</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+        
+        <section id="result" class="container d-hidden">
+            <h2 class="title">Result </h2>
+        <div id="sub-result" class="sub-container mb-1">
+            <h3 id="result-title" class="result-title"></h3>
+            <div id="result-bmi" class="result-bmi" ></div>
+            <p id="result-desc" class="result-desc"></p>
+        </div>
+        <div>
+            <button type="reset" class="btn" onclick="regenerateBMI()"><a href="#bmiCalc">Count again</a></button>
+         </div>
+
+        </section>
+
+        </main>
+
+        <section id="service" class="container-two">
+                <div class="service one">
+                    <h3>Result Title</h3>
+                    <p>This title displays the user's BMI status based on the calculation results. The status is derived from predefined categories in the code, such as "Underweight," "Normal (ideal)," "Overweight," or "Obesity."</p>
+                </div>
+                <div class="service two">
+                    <h3>BMI Value</h3>
+                <p>This is the numerical value of the BMI calculated based on the entered weight and height. The value is displayed with one decimal point.</p>
+            </div>
+            <div class="service three">
+                <h3>Status Description</h3>
+                <p>This provides a more detailed explanation or description of the user's BMI status. The description gives context about what the BMI status means and may include suggestions or additional information</p>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-container">
+              <div class="footer-top">
+                <div class="footer-info">
+                  <a href="#" class="footer-brand">Andin</a>
+                  <p class="footer-role">Junior Front-End Developer</p>
+                </div>
+                <div class="footer-social">
+                    <ul>
+                        <a href="https://github.com/AndiniEkaLisnawati" target="_blank">
+                            <i class="fab fa-github"></i> 
+                        </a>
+                        <a href="https://www.linkedin.com/in/andinn" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:andiniekalisnawatililis2@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </ul>
+                </div>
+              <div class="footer-bottom">
+                <p>&copy; 2025 Andin. All rights reserved.</p>
+                <p>Made with <span class="heart">♥</span> by Me</p>
+              </div>
+            </div>
+          </footer>
+          
+    </div>
+        
+    <script src="./script.js"></script>
 </body>
 </html>
